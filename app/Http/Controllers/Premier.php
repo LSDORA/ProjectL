@@ -12,7 +12,7 @@ class Premier extends Controller
             'moi',
             'toi'
         ];
-         
+        dd($eleves);
         return view('newdeux', ['eleves' => $eleves]);
         
     }

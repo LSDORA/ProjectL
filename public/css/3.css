@@ -1,0 +1,85 @@
+h2,label,input{
+    background-color: var(--main-color) ;
+}
+h2{
+    margin-bottom: 2rem;
+    position: relative;
+    top: 5rem;
+}
+nav{
+    margin-bottom: 15rem;
+}
+.info{
+     margin: 0 10%;
+     margin-top: 2rem;
+     text-align: start;
+}
+.info input{
+    padding: 6px 125px;
+    margin-bottom: 2rem;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+}
+input[type=file] {
+  
+}
+.info input:focus{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 5px solid black;
+}
+legend{
+    font-size: 3rem;
+    
+}
+
+.info label{
+   
+    background-color: transparent !important ;
+    padding: 6px 30px;
+}
+.info label:first-child{
+
+}
+
+.ok{
+ position: relative;
+ top: 25rem; 
+ background-color: var(--main-color) ;
+ margin: 0% 34%;
+
+}
+
+.left2{
+  top: 3rem;
+  position: relative;
+  left: 15rem;
+}
+
+
+
+
+
+li{  color: var(--seconde);}
+
+.client{
+    background-image: url(../image/pexels-tembela-bohle-1884576.jpg);
+    height: 70rem;
+    background-position: center;
+    background-size: cover;
+}
+.admin{
+    background-image: url(../image/pexels-frans-van-heerden-720456.jpg);
+    height: 70rem;
+    background-position: center;
+    background-size: cover;
+}   
+
+fieldset{
+    background-color: var(--main-color) !important;
+}
+
+form{ background-color: transparent;}
