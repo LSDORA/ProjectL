@@ -14,9 +14,9 @@
 <body>
   <section class="ok">
       <h3>Merci de vous etre inscrit! Votre formulaire a été soumis avec succès</h3>
-  <h4>BIENVENUE NGAMPOLO AYMERICK</h4>
+  <h4>BIENVENUE {{ $prenom }} {{ $nom }} </h4>
   <div><img src="" alt="" srcset=""></div>
-  <a href="/clientpanel"><h4>PAGE UTILISATEUR →</h4></a>
+  <a href="/client"><h4>PAGE CONNEXION UTILISATEUR →</h4></a>
   </section>
 </body>
 </html>

@@ -22,17 +22,17 @@
 
  <section class="admin">
   <section class="ok" >
-      <form action="">
+    <form action="{{ route('connexion.traiter') }}" method="POST">
           <fieldset>
               <legend>CONNEXION ADMIN</legend>
-              <div class="info">  
-                  <label for="username">Username :</label>
-                  <input type="text" name="" id="">  
-                  <label for="password">Password :</label>  
-                  <input type="text" name="" id="">  
-                  </div>
-                  <a href="adminpanel.html">
-              <input class="button-50 mzero left2" type="button" value="Connexion"/></a>
+              <div class="info">
+                <label for="login">Username :</label>
+                <input type="text" name="login" id="login"> 
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password"> 
+            </div>
+                  
+              <input class="button-50 mzero left2" type="submit" value="Connexion"/>
           </fieldset>
         
       </form>

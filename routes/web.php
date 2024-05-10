@@ -3,6 +3,8 @@
 const prenom = 'Aymerick';
 const nom ='Ngampolo';
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\ConnexionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +37,8 @@ Route::get('/inscription', function () {
 Route::get('/confirm', function () {
     return view('confirm');
 });
+
+
+Route::post('/inscription', [InscriptionController::class, 'store'])->name('inscription.submit');
+Route::post('/connexion', [ConnexionController::class, 'traiterConnexion'])->name('connexion.traiter');
+Route::post('/connexion', [ConnexionController::class, 'deconnexion'])->name('connexion.deconnexion');

@@ -16,7 +16,11 @@
   <nav><ul>
       <a href="/index"><li>GET BACK HOME</li></a>
       <a href="/inscription"><li>MAISON DES LIGUES</li></a>
-      <a href="/admin"><li class="end"><input class="button-51 mzero rouge" type="button" value="DECONNEXION"></li></a>
+     <li class="end"><form action="{{ route('connexion.deconnexion') }}" method="POST">
+      @csrf <!-- Ajoutez ceci pour protéger votre formulaire contre les attaques CSRF -->
+      <button type="submit" class="button-51 mzero rouge">DECONNEXION</button>
+  </form>
+  </li>
   </ul></nav>
 
   <section class="headbanner">

@@ -27,29 +27,30 @@
       <div class="button-50" id="button-50">INSCRIPTION →</div>
       <h4>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois prochain on vous propose toutes les séance de sport sur vos support préférés</h4>
    </form>
-   <form class="bloc2 disabled action="">
+   <form class="bloc2 disabled" method="POST" action="{{ route('inscription.submit') }}" enctype="multipart/form-data">
+    @csrf
       <div class="button-51 left mzero" id="button-51" >X</div>
       <div class="info">
           <label for="nom">Nom :</label>
-          <input type="text" name="" id="">
+          <input type="text" name="nom" id="nomuser">
           <label for="nom">Prénom :</label>
-          <input type="text" name="" id="">
+          <input type="text" name="prenom" id="prenomuser">
           <label for="date">Date de Naissance :</label>
-          <input type="date" name="" id="">
+          <input type="date" name="datenaissance" id="dateuser">
           <label for="mail">Mail :</label>
-          <input type="email" name="" id="">
+          <input type="email" name="mail" id="mailuser">
           <label for="mail">Password :</label>
-          <input type="password" name="" id="">
+          <input type="password" name="motdepasse" id="password">
           <label for="ville">Ville de résidence :</label>
-          <input type="text" name="" id="">
+          <input type="text" name="ville" id="city">
           <label for="photo">Photo de profile <i class="fa-solid fa-arrow-up-from-bracket" style="color: #000000;"></i>
-                  <input type="file" id="photo" name="photo" accept="image/*" required aria-required="true">
+                  <input type="file" id="photo" name="photo" accept="image/*" >
           </label>
           
           
       </div>
-      <a href="/confirm">
-      <input class="button-50 mzero" type="button" value="INSCRIPTION →" id="send"/></a>
+      
+      <input class="button-50 mzero" type="submit" value="INSCRIPTION →" id="send"/>
    </form>
   </section>
   <script>
