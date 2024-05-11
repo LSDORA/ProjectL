@@ -14,19 +14,22 @@
 </head>
 <body>
     <nav><ul>
-        <a href="/index"><li>GET BACK HOME</li></a>
+       <!-- <a href="/index"><li>GET BACK HOME</li></a> -->
         <a href="/inscription"><li>MAISON DES LIGUES</li></a>
-        <a href="/client"><li class="end"><input class="button-51 mzero rouge" type="button" value="DECONNEXION"></li></a>
+        <a href="/client"><li class="end"><form action="{{ route('connexion.deconnexion') }}" method="POST">
+          @csrf <!-- Ajoutez ceci pour protéger votre formulaire contre les attaques CSRF -->
+          <button type="submit" class="button-51 mzero rouge">DECONNEXION</button>
+      </form></li></a>
     </ul></nav>
 
     <section class="headbanner">
        <div class="head">
             <ul>
-              <li><img src="https://cdn.nba.com/headshots/nba/latest/1040x760/1629029.png" height="50rem" alt="Luka Doncic"></li>
-              <li>DONCIC</li>
-              <li>Luka</li>
-              <li>Dallas, United State, 12:30</li>
-              <li></li>
+              <li><img src="{{ asset($photo) }}" height="50rem" alt="Luka Doncic"></li>
+              <li style="text-transformation: uppercase">{{$nom}}</li>
+              <li>{{$prenom}}</li>
+              <li>{{$ville}}</li>
+              <li>{{$mail}}</li>
               
             </ul>
         

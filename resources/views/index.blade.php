@@ -18,6 +18,12 @@
         <li class="end">
         MAISON DES LIGUES</li>
     </ul></nav>
+    @if(auth()->check() && auth()->user()->droit == '1')
+    <a href="/adminpanel"><li class="must"> Page Admin</li></a>
+@endif
+@if(auth()->check() && auth()->user()->droit == '0')
+<a href="/clientpanel"><li class="must"> Page Client</li></a>
+@endif
 
     <section class="headbanner">
           <h1>PARIS 2024</h1>

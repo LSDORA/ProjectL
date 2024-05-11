@@ -25,7 +25,7 @@ class User extends Authenticatable
         'nom', // Ajoutez les champs requis pour l'inscription
         'prenom',
         'datenaissance',
-        'ville', 'droit',
+        'ville', 'droit','photo',
     ];
 
     /**
@@ -59,6 +59,19 @@ class User extends Authenticatable
     {
         // Calculer l'âge à partir de la date de naissance de l'utilisateur
         return Carbon::parse($this->datenaissance)->age;
+    }
+    protected static function boot()
+    {
+        parent::boot();
+
+        
+        static::saving(function ($user) {
+         
+            if (is_null($user->photo)) {
+                
+                $user->photo = 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=170667a&w=0&k=20&c=EqD6q8IUqwN_bgGec0UBhh3tk2Zuur5lezDDlQsGdPY=';
+            }
+        });
     }
 
     
