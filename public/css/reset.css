@@ -20,7 +20,7 @@ ul,li{
     list-style: none;
     padding: 0;margin: 0;
 }
-li,h1,h2,label,input,legend,div{
+li,h1,h2,h4,h5,label,p,input,legend,div{
   
     font-family: 'Open',sans-serif;
 }
@@ -57,7 +57,7 @@ h3,label{
     padding: 0;
     margin: 0;
 }
-h4{
+h4,p{
     font-size: 1.6rem;
     padding: 0;
     margin: 0;
@@ -168,7 +168,7 @@ a{
 }
 
 .rouge{
-    background-color: var(--red) !important;
+    background-color: var(--red) ;
 }
 
 
@@ -216,4 +216,8 @@ a{
   .button-51:not([disabled]):active {
     box-shadow: #ffffff00 2px 2px 0 0, #000 2px 2px 0 1px;
     transform: translate(2px, 2px);
+  }
+
+  th::first-letter,td::first-letter{
+  text-transform: uppercase;
   }

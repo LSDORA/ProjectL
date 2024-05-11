@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 @php
  const tittle = "CONNEXION ADMIN";
+
 @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -21,8 +22,12 @@
 
 
  <section class="admin">
+
   <section class="ok" >
     <form action="{{ route('connexion.traiter') }}" method="POST">
+        @csrf
+      
+
           <fieldset>
               <legend>CONNEXION ADMIN</legend>
               <div class="info">
@@ -31,12 +36,18 @@
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password"> 
             </div>
-                  
+         <!-- Afficher un message d'erreur si la variable $error est définie -->
+@if(session('error'))
+<h4 style="color: red; text-align:center">{{ session('error') }}</h4>
+@endif
+
               <input class="button-50 mzero left2" type="submit" value="Connexion"/>
           </fieldset>
         
       </form>
-      
+ 
+  
+
   </section>
  </section>
 

@@ -5,6 +5,7 @@ const nom ='Ngampolo';
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\ConnexionController;
+use App\Http\Controllers\MembreController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,5 +41,7 @@ Route::get('/confirm', function () {
 
 
 Route::post('/inscription', [InscriptionController::class, 'store'])->name('inscription.submit');
-Route::post('/connexion', [ConnexionController::class, 'traiterConnexion'])->name('connexion.traiter');
-Route::post('/connexion', [ConnexionController::class, 'deconnexion'])->name('connexion.deconnexion');
+Route::post('/admin', [ConnexionController::class, 'traiterConnexion'])->name('connexion.traiter');
+Route::post('/deconnexion', [ConnexionController::class, 'deconnexion'])->name('connexion.deconnexion');
+Route::get('/adminpanel', [MembreController::class, 'listeUtilisateurs'])->name('adminpanel');
+Route::delete('/delete/user/{id}', [MembreController::class, 'delete']);

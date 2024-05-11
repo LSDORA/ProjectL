@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class ConnexionController extends Controller
 {
@@ -12,27 +17,19 @@ class ConnexionController extends Controller
         $credentials = $request->only('login', 'password');
 
         if (Auth::attempt($credentials)) {
-            // L'authentification a réussi
-            $user = User::where('login', $request->login)->first();
-            if ($user) {
-                if ($user->droit == 1) {
-                    // Ouvrir une session pour l'utilisateur avec le droit égal à 1
-                    Auth::login($user);
-                    // Rediriger l'utilisateur vers la page adminpanel
-                    return redirect('/adminpanel');
-                } elseif ($user->droit == 0) {
-                    // Ouvrir une session pour l'utilisateur avec le droit égal à 0
-                    Auth::login($user);
-                    // Rediriger l'utilisateur vers la page clientpanel
-                    return redirect('/clientpanel');
-                }
+            // Authentification réussie, vérifiez le droit de l'utilisateur
+            $user = Auth::user();
+
+            if ($user->droit == 1) {
+                // L'utilisateur a le droit requis, redirigez-le vers adminpanel
+                return redirect('/adminpanel');
+            } else {
+                // L'utilisateur n'a pas le droit requis, affichez un message d'erreur
+                return redirect()->back()->with('error', 'Droit insuffisant');
             }
-        
-             
-           
         } else {
-            // L'authentification a échoué, affichage d'un message d'erreur
-            return redirect()->back()->with('error', 'Identifiant ou mot de passe incorrect.');
+            // Authentification échouée, redirigez avec un message d'erreur
+            return redirect()->back()->with('error', 'Mot de passe incorrect');
         }
     }
 

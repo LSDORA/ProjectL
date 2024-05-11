@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
+
 
 class User extends Authenticatable
 {
@@ -48,4 +50,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+        /**
+     * Calculer l'âge de l'utilisateur.
+     *
+     * @return int
+     */
+    public function calculerAge(): int
+    {
+        // Calculer l'âge à partir de la date de naissance de l'utilisateur
+        return Carbon::parse($this->datenaissance)->age;
+    }
+
+    
 }
