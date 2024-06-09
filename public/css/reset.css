@@ -20,7 +20,7 @@ ul,li{
     list-style: none;
     padding: 0;margin: 0;
 }
-li,h1,h2,h4,h5,label,p,input,legend,div{
+li,h1,h2,h4,h5,label,p,input,legend,div,textarea{
   
     font-family: 'Open',sans-serif;
 }
@@ -170,6 +170,13 @@ a{
 .rouge{
     background-color: var(--red) ;
 }
+.rougee{
+  background-color: var(--red) !important;
+}
+.rougecolor{
+  color: var(--red) !important;
+}
+
 
 
 .button-51 {

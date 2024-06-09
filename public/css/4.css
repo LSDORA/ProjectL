@@ -27,7 +27,27 @@ input[type=search]{
     width: 60%;
     margin-top: 2.5rem;
 }
+.tittle{
+  padding: 6px 0;
+  margin-bottom: 2rem;
+  border-top: transparent;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  font-size: 2rem;
+  width: 60%;
+  margin-top: 2.5rem;
+  text-align: center;
 
+}
+.tittle::before{
+ content: "";
+ position: absolute;
+ height: .3rem;
+ width: 50%;
+ top: 6rem;
+ background-color: #383838;
+}
 input:focus{
     border-bottom: 3px solid black;
 }
@@ -91,100 +111,6 @@ th{
 
 
 
-
-  .angry-grid {
-    display: grid; 
-    transform: translateY(2rem);
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    
-    gap: 10px;
-    height: 120%;
-    margin: 0 2%;
-    
- }
-   
- #item-0 {
- 
-    
-    grid-row-start: 1;
-    grid-column-start: 1;
- 
-    grid-row-end: 2;
-    grid-column-end: 2;
-    
- }
- #item-1 {
- 
-    
-    grid-row-start: 1;
-    grid-column-start: 2;
- 
-    grid-row-end: 2;
-    grid-column-end: 3;
-    
- }
- #item-2 {
- 
-    
-    grid-row-start: 1;
-    grid-column-start: 3;
- 
-    grid-row-end: 2;
-    grid-column-end: 4;
-    
- }
- #item-3 {
- 
-    
-    grid-row-start: 1;
-    grid-column-start: 4;
- 
-    grid-row-end: 2;
-    grid-column-end: 5;
-    
- }
- #item-4 {
- 
-    
-    grid-row-start: 2;
-    grid-column-start: 4;
- 
-    grid-row-end: 3;
-    grid-column-end: 5;
-    
- }
- #item-5 {
- 
-    
-    grid-row-start: 2;
-    grid-column-start: 3;
- 
-    grid-row-end: 3;
-    grid-column-end: 4;
-    
- }
- #item-6 {
- 
-    
-    grid-row-start: 2;
-    grid-column-start: 2;
- 
-    grid-row-end: 3;
-    grid-column-end: 3;
-    
- }
- #item-7 {
- 
-    
-    grid-row-start: 2;
-    grid-column-start: 1;
- 
-    grid-row-end: 3;
-    grid-column-end: 2;
-    
- }
-
  .porshe{
   margin-top: 1rem;
   height: 14rem;
@@ -192,44 +118,8 @@ th{
   background-size: cover;  margin: 2rem 0 0 2rem;
   background-image: url(../image/pexels-robert-hernandez-villalta-128457.jpg);
  }
- .porshe1{
-    margin-top: 1rem;
-  height: 14rem;
-  width: 90%;  margin: 2rem 0 0 2rem;
-  background-size: cover;
-  background-position:  center bottom;
-  background-image: url(../image/pexels-polina-chistyakova-14544821.jpg);
- }
- .porshe2{
-    margin-top: 1rem;
-  height: 14rem;
-  width: 90%;  margin: 2rem 0 0 2rem;
-  background-size: cover;
-  background-image: url(../image/pexels-robert-hernandez-villalta-128457.jpg);
- }
- .angry-grid h3{
-  text-align: start;
-  margin: 0 0 0 2rem;
-}
-.angry-grid p{
-  text-align: start;
-  margin: 0 0 0 2rem;
-}
 
-.angry-grid input[type=button]{
-  font-size: 8rem;
-  padding: 4px 50px;
-  transform: translateY(80%);
-}
 
-.angry-grid div{
-  background-color: lightgray;
-}
-
-.angry-grid img{
-  width: 25%;
-  transform: translateY(90%);
-}
 
 .no{
   background-color: rgb(239, 237, 237) !important;
@@ -245,6 +135,17 @@ th{
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
+.edit-confirm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
 
 .custom-confirm-content {
   position: absolute;
@@ -274,12 +175,144 @@ button {
   background-color: #4CAF50;
   color: white;
 }
+#edit-yes {
+  background-color: #4CAF50;
+  color: white;
+}
+
 
 #confirm-no {
   background-color: #f44336;
   color: white;
 }
-
+#edit-no {
+  background-color: #f44336;
+  color: white;
+}
 .grey:hover, .rouge:hover {
  filter:  brightness(80%);
+}
+
+.btn-group input{
+  margin: 1% 0%;
+  padding: 6px 0;
+ border-top: transparent;
+    border-right: none;
+    border-left: none;
+    background-color: transparent;
+   
+    width: 60%;
+}
+
+.btn-group button{
+  margin-top: 5%;
+}
+
+.cree{
+padding: 0 4%;
+  height: 100%;
+  
+}
+.cree form{
+  display: flex;
+}
+
+.cre{
+display: flex;
+}
+.cree h3{
+  display: flex;
+  justify-content: start;
+}
+#titre{
+  display: flex;
+  justify-content: start;
+  padding: 10px;
+  width: 80rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+}
+
+
+input[type=file]{
+  background-color: #4CAF50;
+}
+textarea{
+  padding: 10px;
+  margin-top: 1rem;
+  width: 100rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  resize: none;
+  max-height: 37rem;
+  border-radius: 1rem;
+}
+
+
+.file-input-container {
+  position: relative;
+  width: 35%;
+  margin-left: 3rem;
+  
+
+}
+
+
+
+.file-input {
+  width: 90%;
+  padding: 10px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.file-input-label {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  line-height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+  background-color: #45a049;
+}
+
+.file-input:focus + .file-input-label,
+.file-input:active + .file-input-label {
+  background-color: #3e8e41;
+}
+
+.event{
+  height: 10rem;
+  width: 150%;
+ margin-left: 3rem;
+ background-color: #2b60a1;
+ color: var(--main-color);
+ border-radius: 0px 0px 5px 5px;
+}
+.image{
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.7282562683276436) 0%, rgba(0,0,0,0) 100%),url(../image/pexels-pixabay-220383.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 44rem;
+  width: 150%;
+  margin-left: 3rem;
+  border-radius: 5px 5px 0px 0px;
+}
+.head{
+  margin-top: 1rem;
 }

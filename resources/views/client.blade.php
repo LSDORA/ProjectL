@@ -13,7 +13,7 @@
 </head>
 <body>
   <nav><ul>
-      <a href="/index"><li>HOME</li></a>
+      <a href="/"><li>HOME</li></a>
       <a href="/admin"><li>ADMIN</li></a>
       <a><li> MAISON DES LIGUES</li></a>
  

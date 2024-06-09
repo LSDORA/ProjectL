@@ -13,17 +13,18 @@
 </head>
 <body>
     <nav><ul>
+    
         <a href="/client"><li>CONNEXION</li></a>
         <a href="/inscription"><li>INSCRITION</li></a>
+        
+        @if(auth()->check() && auth()->user()->droit == '1')
+        <a href="/adminpanel"><li class="rougecolor" > Page Admin</li></a>
+    @endif
+    
         <li class="end">
         MAISON DES LIGUES</li>
     </ul></nav>
-    @if(auth()->check() && auth()->user()->droit == '1')
-    <a href="/adminpanel"><li class="must"> Page Admin</li></a>
-@endif
-@if(auth()->check() && auth()->user()->droit == '0')
-<a href="/clientpanel"><li class="must"> Page Client</li></a>
-@endif
+
 
     <section class="headbanner">
           <h1>PARIS 2024</h1>
@@ -33,21 +34,15 @@
          <h1>MAISON DES LIGUES</h1>
          
          <div class="publication">
-            <div id="item-0"> 
-                <div class="porshe"></div>
-              <h3>SUPER BOWL 2021</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corrupti a neque suscipit possimus perferendis, repellat doloremque ad illum, voluptate dolorem incidunt dicta deserunt animi praesentium! Quaerat voluptatem iure explicabo.</p>
-          </div>
-              <div id="item-1"> <div class="porshe1"></div>
-                <h3>EPREUVE DE NATATION DANS LA SEINE</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corrupti a neque suscipit possimus perferendis, repellat doloremque ad illum, voluptate dolorem incidunt dicta deserunt animi praesentium! Quaerat voluptatem iure explicabo.</p>
-            </div>
-              <div id="item-2"> <div class="porshe2">.</div>
-                <h3>SUPER BOWL 2021</h3>
-              <p>Lorem ipsum dolor sit &nbsp;amet consectetur adipisicing elit. Aliquam corrupti a neque suscipit possimus perferendis, repellat doloremque ad illum, voluptate dolorem incidunt dicta deserunt animi praesentium! Quaerat voluptatem iure explicabo.</p>
-            </div>
-          
-         </div>
+          @foreach($evenements as $evenement)
+              <div class="box"> 
+                  <div class="porshe" style="background-image: url('{{ asset($evenement->image) }}')"></div>
+                  <h3>{{ $evenement->nom }}</h3>
+                  <p>{{ $evenement->description }}</p>
+                  <h4></h4>
+              </div>
+          @endforeach
+      </div>
     </section>
     <footer>
         <img src="{{asset('image/pngegg (1).png')}}" alt="" srcset="">

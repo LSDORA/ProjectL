@@ -54,7 +54,7 @@ class ConnexionController extends Controller
 
     public function deconnexion(Request $request){
         Auth::logout();
-        return redirect('/index');
+        return redirect('/');
     }
 }
 

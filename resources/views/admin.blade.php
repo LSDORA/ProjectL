@@ -14,7 +14,7 @@
 </head>
 <body>
   <nav><ul>
-      <a href="/index"><li>HOME</li></a>
+      <a href="/"><li>HOME</li></a>
       <a href="/client"><li>CLIENT </li></a>
       <a><li> MAISON DES LIGUES</li></a>
       

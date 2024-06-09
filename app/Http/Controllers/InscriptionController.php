@@ -20,6 +20,7 @@ class InscriptionController extends Controller
         $user->email = $request->mail;
         $user->password = bcrypt($request->motdepasse);
         $user->ville = $request->ville;
+        $user->photo = $request->photo;
         
     
         // Enregistrez l'utilisateur dans la base de données

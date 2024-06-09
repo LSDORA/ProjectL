@@ -30,4 +30,38 @@ class MembreController extends Controller
 
     return response()->json(['message' => 'Utilisateur supprimé avec succès'], 200);
 }
+
+public function update(Request $request, $id)
+{
+    $user = User::find($id);
+
+    if ($request->filled('nom')) {
+        $user->nom = $request->input('nom');
+    }
+
+    if ($request->filled('prenom')) {
+        $user->prenom = $request->input('prenom');
+    }
+
+    if ($request->filled('email')) {
+        $user->email = $request->input('email');
+    }
+
+    if ($request->filled('date_naissance')) {
+        $user->date_naissance = $request->input('date_naissance');
+    }
+
+    if ($request->filled('ville')) {
+        $user->ville = $request->input('ville');
+    }
+    
+    if ($request->filled('mot_de_passe')) {
+        $user->password = bcrypt($request->input('mot_de_passe'));
+    }
+
+    $user->save();
+
+    return redirect()->back()->with('success', 'Utilisateur mis à jour avec succès');
+}
+
 }
