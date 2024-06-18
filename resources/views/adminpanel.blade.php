@@ -85,6 +85,7 @@ const tittle = "MAISON DES LIGUES";
             <input type="text" name="date_naissance" id="editDateNaissance" placeholder="Date de naissance"><br>
             <input type="text" name="ville" id="editVille" placeholder="Ville"><br>
             <input type="password" name="mot_de_passe" id="editMotDePasse" placeholder="Mot de passe"><br>
+
             <div class="btn-group">
                 <button type="submit" id="edit-yes">Éditer</button>
                 <button type="button" id="edit-no">Annuler</button>

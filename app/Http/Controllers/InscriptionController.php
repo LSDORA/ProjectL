@@ -9,7 +9,18 @@ class InscriptionController extends Controller
 {
     public function store(Request $request)
     {
+        $validated = $request->validate([
+          'photo' => 'required|image|max:2048', 
+        ]);
 
+        $file = $request->file('photo');
+    
+
+          // Traiter l'image et la stocker dans le dossier 'public/images'
+    $imagePath = $request->file('photo')->store('public/images');
+
+    // Transformer le chemin stocké pour qu'il soit accessible via une URL
+    $imagePath = str_replace('public/', 'storage/', $imagePath);
       //  dd($request->all());
        
         $user = new User();
@@ -20,7 +31,7 @@ class InscriptionController extends Controller
         $user->email = $request->mail;
         $user->password = bcrypt($request->motdepasse);
         $user->ville = $request->ville;
-        $user->photo = $request->photo;
+        $user->photo = $imagePath;
         
     
         // Enregistrez l'utilisateur dans la base de données

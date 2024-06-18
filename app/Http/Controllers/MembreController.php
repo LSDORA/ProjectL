@@ -59,6 +59,17 @@ public function update(Request $request, $id)
         $user->password = bcrypt($request->input('mot_de_passe'));
     }
 
+    if ($request->filled('photo')) {
+        
+      $imagePath = $request->file('photo')->store('public/images');
+  
+      // Transformer le chemin stocké pour qu'il soit accessible via une URL
+      $imagePath = str_replace('public/', 'storage/', $imagePath);
+        //  dd($request->all());
+        
+        $user->photo = $imagePath;
+    }
+
     $user->save();
 
     return redirect()->back()->with('success', 'Utilisateur mis à jour avec succès');
